@@ -1,0 +1,16 @@
+<h1>promos | combos | entradas | pizzas  | postres | bebidas</h1>
+    <div class="menu-container border border-primary ">
+        <div class="row ">
+            <% 3.times do %>
+            <% @product.each do |product| %>
+            <div class="col-4 border border-secondary">
+                <%# rockweell %>
+                <h5><%= product.name %></h5>
+                <%# segoe ui %>
+                <p><%= product.description %></p>
+                <span><%= product.price %> | <%= product.catering ? "Available for catering" : "" %></span>
+            </div>
+            <% end %>
+            <% end %>
+        </div>
+    </div>

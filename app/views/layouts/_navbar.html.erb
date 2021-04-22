@@ -1,5 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<%# fonto blando gris o negro con el logo %>
   <div class="container-fluid">
+        <%= link_to root_path do %>
+        <%= image_tag("/logo_wh.png", alt: 'Logo', width:"40",class: "navbar-brand")%>
+        <% end %>
     <%= link_to 'Mangiare', root_path, class: 'navbar-brand' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,10 +11,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <%= link_to "Menu", menu_path, class: "nav-link #{@page == 'menu' ? 'active' : ''}" %>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <%= link_to "Catering", catering_path, class: "nav-link #{@page == 'catering' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "More Info", info_path, class: "nav-link #{@page == 'info' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Customer Reviews", "", class: "nav-link #{@page == 'reviews' ? 'active' : ''}" %>
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
@@ -19,7 +29,7 @@
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.email %>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">
             <li class="nav-item">
               <%= link_to 'Edit Account', edit_user_registration_path, class: 'dropdown-item'  %>
             </li>

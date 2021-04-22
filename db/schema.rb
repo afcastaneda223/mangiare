@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(version: 2021_04_20_221747) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "price"
-    t.boolean "available"
-    t.boolean "catering"
-    t.boolean "featured"
+    t.string "name", default: ""
+    t.text "description", default: ""
+    t.integer "price", default: 0
+    t.boolean "available", default: true
+    t.boolean "catering", default: false
+    t.boolean "featured", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
