@@ -1,14 +1,16 @@
-<h1>promos | combos | entradas | pizzas  | postres | bebidas</h1>
-    <div class="menu-container border border-primary ">
+<%= render 'menu/submenu' %>
+    <div class="menu-container  mt-5">
         <div class="row ">
             <% 3.times do %>
             <% @product.each do |product| %>
-            <div class="col-4 border border-secondary">
+            <div class="col-4">
+                
                 <%# rockweell %>
+                <%= image_tag("/#{product.name}.jpeg", alt: 'pizza', width:"250", class:"img-fluid")%>
                 <h5><%= product.name %></h5>
                 <%# segoe ui %>
                 <p><%= product.description %></p>
-                <span><%= product.price %> | <%= product.catering ? "Available for catering" : "" %></span>
+                <p><%= product.price %> | <%= product.catering ? "Available for catering" : "" %></p>
             </div>
             <% end %>
             <% end %>

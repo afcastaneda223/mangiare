@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<%# fonto blando gris o negro con el logo %>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Promos", menu_path, class: "nav-link #{@page == 'menu' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Combos", catering_path, class: "nav-link #{@page == 'catering' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Entradas", info_path, class: "nav-link #{@page == 'info' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Pizzas", "", class: "nav-link #{@page == 'reviews' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Postres", "", class: "nav-link #{@page == 'reviews' ? 'active' : ''}" %>
+        </li>
+        <li class="nav-item">
+            <%= link_to "Bebidas", "", class: "nav-link #{@page == 'reviews' ? 'active' : ''}" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
