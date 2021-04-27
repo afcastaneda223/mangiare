@@ -10,6 +10,8 @@
     <%= f.input :available %>
     <%= f.input :catering %>
     <%= f.input :featured %>
+    <%= f.collection_select(:category_id, Category.all, :id, :heading) %>
+    <%= f.file_field :image %>
   </div>
 
   <div class="form-actions">

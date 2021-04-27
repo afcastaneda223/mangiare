@@ -11,11 +11,43 @@ User.create!(email: 'a@a.com',
             password_confirmation: '123456',
             admin: true)
 
-25.times do |_i|
-    Product.create!(
+Category.create(heading: 'Pizza', body: "its so good", display: true)
+Category.create(heading: 'Pasta', body: "its a pasta", display: true)
+Category.create(heading: 'Postres', body: "son los postres", display: true)
+
+10.times do |i|
+    pizza = Product.new(
         name: 'pizza',
         description: 'loren ipsun bbq pizza',
         price: '12000',
-        catering: true
+        catering: true,
+        category: Category.find(1)
     )
+    pasta = Product.new(
+        name: 'pasta',
+        description: 'loren ipsun bbq pizza',
+        price: '10000',
+        catering: true,
+        category: Category.find(2)
+    )    
+    postre = Product.new(
+        name: 'postre',
+        description: 'loren ipsun bbq pizza',
+        price: '9000',
+        catering: true,
+        category: Category.find(3)
+    )
+    pizza.image.attach(io: open('https://picsum.photos/1920/1080'), filename: "#{i}_pizza_image.jpg")
+    pasta.image.attach(io: open('https://picsum.photos/1920/1080'), filename: "#{i}_pasta_image.jpg")
+    postre.image.attach(io: open('https://picsum.photos/1920/1080'), filename: "#{i}_postre_image.jpg")
+
+    if i == 5
+        pizza.featured = true;
+        pasta.featured = true;
+        postre.featured = true;
+    end
+    pizza.save
+    pasta.save
+    postre.save
+
 end
