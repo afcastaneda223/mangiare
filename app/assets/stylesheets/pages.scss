@@ -6,10 +6,16 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.page-container {
+body {
   margin: 0px;
   padding: 0px;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  background-image: url("/fondo.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .title-card {
@@ -23,26 +29,20 @@
   margin: 0;
 }
 
-.home-page {
-  width: 100%;
-  height: 100%;
-  background-image: url("/fondo.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 #mainimg {
   padding-top: 40px;
   display: flex;
   justify-content: center;
 }
-#test {
+.promo-container {
+  margin: 0px;
+  padding: 0px;
   width: 100%;
-  height: 500px;
+  min-height: 450px;
   background-image: url("/main.png");
-  background-size: 100% 100%;
-  margin-top: 60px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #map {
   padding-top: 40px;
@@ -50,58 +50,8 @@
   justify-content: center;
 }
 
-.menu-page {
-  width: 100%;
-  height: 100%;
-  background-image: url("/fondo.png");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.menu-container {
-  -webkit-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
-  background-color: #fff;
-  text-align: center;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
 #featured_img {
-}
-
-.catering-page {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("/fondo.png");
-  background-size: 100% 100%;
-}
-.info-page {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("/fondo.png");
-  background-size: 100% 100%;
-}
-.reviews-page {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("/fondo.png");
-  background-size: 100% 100%;
-}
-
-.link-container {
-  padding-left: 1em;
-  padding-top: 0.25em;
-  .link {
-    color: #fff;
-  }
-  .active {
-    color: rgba(255, 255, 255, 0.75);
-  }
-  .link:active {
-    color: rgba(255, 255, 255, 0.75);
-  }
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
 }

@@ -1,21 +1,23 @@
+
+<div class="container-fluid mb-5">
 <div class="row">
     <% @cats.each do |cat| %>
-        <% if cat.products.where(featured: true).first.image.attached? %>
-            <%= image_tag(cat.products.where(featured: true).first.image, class:'img-fluid', id:'featured_img' )%>
-        <% end %>
-        <div class="col-12">
+        <%# <% if cat.products.where(featured: true).first.image.attached? %>
+            <%# <%= image_tag(cat.products.where(featured: true).first.image, class:'img-fluid', id:'featured_img' )%> 
+        <%# <% end %> 
+        <div class="col-12 container bg-dark text-light">
             <h1 style= text-align:center> 
                 <%= cat.heading %>
             </h1>
-            <hr />
         </div>
         <% @product.each do |product| %>
             <% if product.category == cat %>
-                <div class="col-4 container">
-                    <div class="card" style="width: 18rem;">
-                    <%= image_tag("/pizza.jpeg", alt:'pizza', class:"card-img-top") %>
+                <div class="col-4 container my-5 mx-auto" >
+                    <div class="card">
+                    <%= image_tag(cat.products.where(featured: true ).first.image, class:'img-fluid', id:'featured_img' )%>
                     <div class="card-body">
-                        <h5 class="card-title"><%= product.description %></h5>
+                        <h4 class="card-title"><%= product.name %></h4>
+                        <h5 class="card-description"><%= product.description %></h5>
                         <p class="card-text"><%= product.price %> <%= "| Available for catering" if product.catering %></p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
                     </div>
@@ -23,8 +25,11 @@
                 </div>
                     <% end %>
             <% end %> 
+
         <% end %>
 </div>
 
 
+
+</div>
 
