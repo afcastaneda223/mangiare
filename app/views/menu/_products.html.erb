@@ -14,7 +14,7 @@
             <% if product.category == cat %>
                 <div class="col-4 container my-5 mx-auto" >
                     <div class="card">
-                    <%= image_tag(cat.products.where(featured: true ).first.image, class:'img-fluid', id:'featured_img' )%>
+                    <%= image_tag(product.image, class:'img-fluid', id:'featured_img' )%>
                     <div class="card-body">
                         <h4 class="card-title"><%= product.name %></h4>
                         <h5 class="card-description"><%= product.description %></h5>
