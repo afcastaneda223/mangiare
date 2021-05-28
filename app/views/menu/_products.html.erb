@@ -10,7 +10,7 @@
                 <%= cat.heading %>
             </h1>
         </div>
-        <% @product.each do |product| %>
+        <% @products.each do |product| %>
             <% if product.category == cat %>
                 <div class="col-4 container my-5 mx-auto" >
                     <div class="card">
@@ -20,7 +20,7 @@
                         <h5 class="card-description"><%= product.description %></h5>
                         <p class="card-text"><%= product.price %> <%= "| Available for catering" if product.catering %></p>
                         <%= form_with model: @order_item do |f| %>
-                        <%= f.hidden_field :product:id, value: product.id %>
+                        <%= f.hidden_field :product_id, value: product.id %>
                         <%= f.number_field :quantity, value: 1, min: 1 %>
                         <%= f.submit "Add to cart" %>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -30,7 +30,8 @@
                     <% end %>
             <% end %> 
 
-        <% end %>
+    <% end %>
+    <% end %>
 </div>
 
 
