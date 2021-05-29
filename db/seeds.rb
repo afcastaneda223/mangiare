@@ -17,7 +17,7 @@ Category.create(heading: 'Pizza', body: 'its so good', display: true)
 Category.create(heading: 'Pasta', body: 'its a pasta', display: true)
 Category.create(heading: 'Postres', body: 'son los postres', display: true)
 
-9.times do |i|
+4.times do |i|
   pizza = Product.new(
     name: "#{i}_pizza",
     description: 'loren ipsun bbq pizza',
